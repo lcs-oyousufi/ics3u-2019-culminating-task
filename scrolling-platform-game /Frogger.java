@@ -1,72 +1,49 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Frogger here.
+ * Write a description of class frogger here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
 public class frogger extends Actor
 {
-    private int countMove;
-
-    private int movecount;
-
-    private int countMove2;
-
-    private int movecount2;
-
+    private int countmove;
+    private int movecount = 10;
+    
     private int countturn1;
     private int turncount1 = 15;
+    
     private int countturn2;
     private int turncount2 = 15;
-    // the int is for the delay between the turns and moves
-    public frogger()
-    {
-        //position to turn right
-        turn(-90);
+    //varibels(int) for counter/delay between moves and turns
+    public frogger(){
+        turn(-90);  //turn position for right direction move()
 
     }
 
-    /**
-     * Act - do whatever the Frogger wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public void act() 
     {
-        // ask for keys that are being pressed
-        checkkeys();
+        checkkeys();    //ask keys if pressed
+        countmove++;    //counter++
+        countturn2++;  //counter++
+        countturn1++;  //counter++
 
-    }    
-    public void checkkeys()
-    {
+    } 
+
+    public void checkkeys(){
         //ask if key is pressed
-        if(Greenfoot.isKeyDown("up"))
-        {
-            if(countMove >= movecount)
-            // ask for the count and set number for delay 
-            { 
+        if(Greenfoot.isKeyDown("up")){
+            if(countmove >= movecount){ // ask if counter = set number for delay 
                 move(55);
-                //the count is being set to 0 for new row
-                countMove = 0;
-            }
-        }
-
-        if(Greenfoot.isKeyDown("down"))
-        {
-            if(countMove2>=movecount2)
-            // ask for the count and set number for delay 
-            { 
-                move(-55);
-                //the count is being set to 0 for new row
-                countMove2 = 0;
+                countmove = 0;//counter set 0 for new row
             }
         }
 
         if(Greenfoot.isKeyDown("left")){
             // compares if counter >= set number for delay 
             if(countturn2 >= turncount2){ 
-
+               
                 // ask for rotation that you cant turn so far that you can move backwards
                 if(getRotation() == 270){
                     turn(-90); 
@@ -86,7 +63,7 @@ public class frogger extends Actor
                 }
             }
         }
-
+         
         //ask if key is pressed
         if(Greenfoot.isKeyDown("right")){
             // compares if counter >= set number for delay 
@@ -98,7 +75,7 @@ public class frogger extends Actor
                     //counter set 0 for new row
                 }
             }
-
+             
             // compares if counter >>= set number for delay
             if(countturn1 >= turncount1){ 
                 // ask for rotation that you cant turn so far that you can move backwards
@@ -109,8 +86,5 @@ public class frogger extends Actor
                 //counter set 0 for new now
             }
         }
-
-
-        
     }
 }
