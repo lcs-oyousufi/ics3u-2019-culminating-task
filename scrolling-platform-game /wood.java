@@ -28,7 +28,54 @@ public class wood extends Enemies
      */
     public void act() 
     {
-        // Add your action code here.
+        ObjectinWorld = true;
+        countmove++; //counter+1
+        countswitch++;
+        if(countmove>=movecount)
+        {
+            move(move1);
+            countmove = 0;
+        }
+        edge();
+        if(move1 == 50)
+        { 
+            //if moving right m50 = true mm50 = false
+            m50 = true;
+            mm50 = false;
+        } 
+        if(move1 == -50)
+        { 
+            //if moving left m50 = false mm50 = true
+            m50 = false;
+            mm50 = true;
+        }
+        isTouchingfrogger();
+    }  
+    
+    public void edge(){
+
+        if(m50 ==true)
+        { 
+            //if is moving right, isAtEdge switch direction and counter that it doesnt turn 180°
+            if(isAtEdge()){
+                if(countswitch >= switchcount ){
+                    move1 = -50;
+
+                    countswitch = 0;
+                }
+            }
+        }
+        if(mm50 == true)
+        {
+            // look up just for moving left
+            if(isAtEdge()){
+                if(countswitch >= switchcount ){
+                    move1 = 50;
+
+                    countswitch = 0;
+                }
+            }
+        }
 
     }    
 }
