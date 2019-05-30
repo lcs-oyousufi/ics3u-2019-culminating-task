@@ -13,7 +13,8 @@ public class racer extends Enemies
     private int racercount = 100; //increase for less trucks decrease for faster truck rate
     private int countracer;
     
-    public racer(){
+    public racer()
+    {
         GreenfootImage racer = getImage();
         racer.scale(racer.getWidth() +40, racer.getHeight() +20 );
         
@@ -32,7 +33,8 @@ public class racer extends Enemies
             countmove = 0;
         }
     }
-    public void newracer(){
+    public void newracer()
+    {
         
             if(countracer>=racercount){
                 
@@ -42,7 +44,8 @@ public class racer extends Enemies
         
     }
 
-    public void edge(){
+    public void edge()
+    {
         if(isAtEdge()){
             getWorld().removeObject(this);
             ObjectinWorld = false;
