@@ -16,13 +16,13 @@ public class car extends Enemies
     private boolean mm50;
     private int countswitch;
     private int switchcount = 10;
-    private GreenfootImage carl = new GreenfootImage("carl.png");
+    private GreenfootImage car = new GreenfootImage("froggergood_61.png");
     //create boolean varibels and numbers
     public car(){
         move1 = 50; //start moving right
         GreenfootImage carr = getImage(); //getImage for adjusting size
         carr.scale(carr.getWidth() + 30, carr.getHeight() +20);//adjusting size  
-        carl.scale(carl.getWidth() + 30, carl.getHeight() +20);
+        car.scale(car.getWidth() + 30, car.getHeight() +20);
     
     }
 
