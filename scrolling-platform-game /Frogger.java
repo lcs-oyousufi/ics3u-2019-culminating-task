@@ -8,8 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class frogger extends Actor
 {
-    private int countmove;
-    private int movecount = 10;
+    private int countmove1;
+    private int movecount1 = 10;
+    
+    private int countmove2;
+    private int movecount2 = 10;
     
     private int countturn1;
     private int turncount1 = 15;
@@ -25,7 +28,8 @@ public class frogger extends Actor
     public void act() 
     {
         checkkeys();    //ask keys if pressed
-        countmove++;    //counter++
+        countmove1++;  //counter++
+        countmove2++;  //counter++
         countturn2++;  //counter++
         countturn1++;  //counter++
 
@@ -34,9 +38,16 @@ public class frogger extends Actor
     public void checkkeys(){
         //ask if key is pressed
         if(Greenfoot.isKeyDown("up")){
-            if(countmove >= movecount){ // ask if counter = set number for delay 
+            if(countmove1 >= movecount1){ // ask if counter = set number for delay 
                 move(55);
-                countmove = 0;//counter set 0 for new row
+                countmove1 = 0;//counter set 0 for new row
+            }
+        }
+        
+        if(Greenfoot.isKeyDown("down")){
+            if(countmove2 >= movecount2){ // ask if counter = set number for delay 
+                move(-55);
+                countmove2 = 0;//counter set 0 for new row
             }
         }
 
