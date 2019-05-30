@@ -16,7 +16,7 @@ public class froggerWorld extends World
  
 
     // Hero
-    Frogger theFrogger;
+    frogger thefrogger;
 
     // Track whether game is on
     private boolean isGameOver;
@@ -30,7 +30,7 @@ public class froggerWorld extends World
         super(612, 1000, 1); 
 
         // Set up the starting scene
-        
+        addObject(new frogger(), 306, 968);
 
         // Game on
         isGameOver = false;
@@ -80,9 +80,9 @@ public class froggerWorld extends World
     /**
      * Return an object reference to the hero.
      */
-    public Frogger getFrogger()
+    public frogger getFrogger()
     {
-        return theFrogger;
+        return thefrogger;
     }
 
     /**
